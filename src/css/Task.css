@@ -141,3 +141,85 @@
     color: #86efac;
     border: 1px solid #166534;
 }
+
+
+@media (max-width: 768px) {
+    .tm-cards {
+        flex-wrap: wrap;
+    }
+
+    .task-card {
+        width: 45%;
+        flex-grow: 1;
+    }
+
+    .tm-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tm-form-card {
+        flex-direction: column;
+    }
+
+    .tm-form {
+        width: 100%;
+    }
+
+    .tm-list {
+        width: 100%;
+    }
+
+    .tasklist-container {
+        width: 100%;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .tasklist-checkbox {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .tasklist-card {
+        width: 100%;
+        padding-right: 30px; 
+    }
+
+    .tasklist-card-body {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .tasklist-card-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .tasklist-card-btn button {
+        width: 100%;
+        border: 1px solid #555;
+        border-radius: 8px;
+        padding: 8px;
+        transition: 0.3s;
+    }
+    
+    .tasklist-card-btn button:hover {
+        background: #ff4d4d;
+        border-color: #ff4d4d;
+    }
+
+    .tm-form-btn {
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .form-btn {
+        flex: 1;
+        text-align: center;
+        padding: 10px 5px;
+        min-width: max-content;
+    }
+}

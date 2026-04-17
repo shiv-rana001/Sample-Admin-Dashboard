@@ -44,7 +44,7 @@ input[type="text"] {
 }
 
 .user-list {
-  width: 100vw;
+  width: 100%;
   gap: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* here (3,1fr) means 3 columns and 1 fraction of the available space */
@@ -171,4 +171,50 @@ input[type="text"] {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
+}
+
+
+@media (max-width: 768px) {
+  .mid-section {
+    flex-direction: column;
+  }
+
+  .user-list {
+    grid-template-columns: 1fr;
+  }
+
+  .form-css {
+    width: 100%;
+  }
+
+  .user-stats {
+    width: 100%;
+  }
+
+  .cards {
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+  }
+  
+  .cards > div:nth-child(2) {
+    overflow: hidden;
+  }
+
+  .cards p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .cards .delete-btn {
+    grid-column: span 2;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .cards .delete-btn button {
+    width: 100%;
+    border: 1px solid #555;
+    border-radius: 8px;
+  }
 }

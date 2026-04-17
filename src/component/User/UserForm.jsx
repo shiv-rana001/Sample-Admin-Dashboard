@@ -7,7 +7,8 @@ const UserForm = ({onAddUser}) => {
         role:""
     })
 
-    const handleSubmit = ()=>{
+    const handleSubmit = (e)=>{
+            e.preventDefault();
             console.log(FormData); //debug
             onAddUser(FormData); //sending to parent component
             setFormData({name:"",email:"",role:""}) //clearing the form

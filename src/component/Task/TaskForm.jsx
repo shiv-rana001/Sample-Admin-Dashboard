@@ -18,7 +18,7 @@ const TaskForm = ({UserName,onAddTask}) => {
     }
   return (
     <div className='TaskFrom-container'>
-        <form action="" className='tm-con-form w-[20vw]' onSubmit={(e)=>handleSubmit(e)}>
+        <form action="" className='tm-con-form w-full md:w-[30vw] lg:w-[20vw]' onSubmit={(e)=>handleSubmit(e)}>
             <h3>New Task</h3>
             <input className='tm-input' type="text" placeholder='Task title' value={TaskData.title} onChange={(e)=>setTaskData({...TaskData,title:e.target.value})} />
             <textarea className='tm-input' name="" placeholder='Description (optional)' id="" value={TaskData.description} onChange={(e)=>setTaskData({...TaskData,description:e.target.value})}></textarea>

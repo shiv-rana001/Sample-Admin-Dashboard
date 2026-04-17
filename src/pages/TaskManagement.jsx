@@ -7,12 +7,21 @@ import TaskList from '../component/Task/TaskList'
 const TaskManagement = ({UserName}) => {
   const savedTaskData = localStorage.getItem("TaskData")
   const [TaskData, setTaskData] = useState(savedTaskData ? JSON.parse(savedTaskData) : [])
+  const [activeTab, setActiveTab] = useState('all')
   const TaskFormData = (data)=>{
     setTaskData([...TaskData,data])
   }
   useEffect(() => {
     localStorage.setItem("TaskData", JSON.stringify(TaskData))
   },[TaskData])
+
+  const filterScreen = TaskData.filter(task => {
+    if(activeTab==="all") return true
+    if(activeTab==="completed") return task.checked
+    if(activeTab==="pending") return !task.checked
+    return true
+  })
+
   const total = TaskData.length
   const completed = TaskData.filter(task => task.checked).length
   const pending = TaskData.filter(task => !task.checked).length
@@ -28,16 +37,16 @@ const TaskManagement = ({UserName}) => {
             <TaskCards title="Progress" desc={progress} color="text-yellow-600" />
         </div>
         <div className="tm-tabs">
-            <button className='tm-tab active'>All ({total})</button>
-            <button className='tm-tab'>Completed ({completed})</button>
-            <button className='tm-tab'>Pending ({pending})</button>
+            <div className={`tm-tab ${activeTab === 'all' ? 'active' : ''}`} onClick={()=>setActiveTab('all')}>All ({total})</div>
+            <div className={`tm-tab ${activeTab === 'completed' ? 'active' : ''}`} onClick={()=>setActiveTab('completed')}>Completed ({completed})</div>
+            <div className={`tm-tab ${activeTab === 'pending' ? 'active' : ''}`} onClick={()=>setActiveTab('pending')}>Pending ({pending})</div>
         </div>
         <div className="tm-form-card flex gap-6">
           <div className='tm-form'>
           <TaskForm UserName={UserName} onAddTask={TaskFormData}/>
           </div>
           <div className="tm-list">
-            <TaskList TaskData={TaskData} setTaskData={setTaskData}/>
+            <TaskList TaskData={filterScreen} setTaskData={setTaskData}/>
           </div>
         </div>
     </div>

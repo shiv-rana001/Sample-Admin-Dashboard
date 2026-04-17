@@ -31,15 +31,15 @@ const TaskManagement = ({UserName}) => {
         <h1>Task Management</h1>
         <p className='text-[#aaa]'>Total {total} tasks - {progress}% completed</p>
         <div className="tm-cards flex justify-evenly gap-5">
-            <TaskCards title="Total" desc={total} color="text-purple-400" />
-            <TaskCards title="Completed" desc={completed} color="text-green-600" />
-            <TaskCards title="Pending" desc={pending} color="text-blue-600" />
-            <TaskCards title="Progress" desc={progress} color="text-yellow-600" />
+            <TaskCards title="Total" desc={total} color="text-purple-400"  hover="hover:bg-yellow-600"/>
+            <TaskCards title="Completed" desc={completed} color="text-green-600" hover="hover:bg-blue-600"/>
+            <TaskCards title="Pending" desc={pending} color="text-blue-600" hover="hover:bg-green-600"/>
+            <TaskCards title="Progress" desc={progress} color="text-yellow-600" hover="hover:bg-purple-600"/>
         </div>
         <div className="tm-tabs">
-            <div className={`tm-tab ${activeTab === 'all' ? 'active' : ''}`} onClick={()=>setActiveTab('all')}>All ({total})</div>
-            <div className={`tm-tab ${activeTab === 'completed' ? 'active' : ''}`} onClick={()=>setActiveTab('completed')}>Completed ({completed})</div>
-            <div className={`tm-tab ${activeTab === 'pending' ? 'active' : ''}`} onClick={()=>setActiveTab('pending')}>Pending ({pending})</div>
+            <div className={`tm-tab transition-all duration-300 ease-in-out hover:bg-purple-600 ${activeTab === 'all' ? 'active' : ''}`} onClick={()=>setActiveTab('all')}>All ({total})</div>
+            <div className={`tm-tab transition-all duration-300 ease-in-out hover:bg-green-600 ${activeTab === 'completed' ? 'active' : ''}`} onClick={()=>setActiveTab('completed')}>Completed ({completed})</div>
+            <div className={`tm-tab transition-all duration-300 ease-in-out hover:bg-blue-600 ${activeTab === 'pending' ? 'active' : ''}`} onClick={()=>setActiveTab('pending')}>Pending ({pending})</div>
         </div>
         <div className="tm-form-card flex gap-6">
           <div className='tm-form'>

@@ -1,0 +1,174 @@
+@import "tailwindcss";
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
+  padding: 20px;
+}
+
+/* HEADER */
+h1 {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+/* p {
+  color: #aaa;
+} */
+
+/* SEARCH */
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #1c1c1c;
+  color: white;
+}
+
+/* MID SECTION */
+.mid-section {
+  width: 100%;
+  display: flex;
+  gap: 45px;
+  margin-top: 20px;
+}
+
+.user-list {
+  width: 100vw;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* here (3,1fr) means 3 columns and 1 fraction of the available space */
+}
+
+/* FORM */
+.form-css {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 15px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-css h3 {
+  font-size: 16px;
+}
+
+.form-css input,
+.form-css select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #2a2a2a;
+  color: white;
+}
+
+.form-css button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-css button:hover {
+  background: #555;
+}
+
+/* USER LIST */
+.cards {
+  /* width: 60%; */
+  display: grid;
+  align-items: center;
+
+  grid-template-columns: auto 70% auto;
+  justify-content: space-between;
+  background: #1a1a1a;
+
+  border-radius: 12px;
+  margin-bottom: 15px;
+  height: max-content;
+  padding: 16px;
+}
+
+/* USER AVATAR */
+.cards>div:first-child {
+  width: 45px;
+  height: 45px;
+  background: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+/* USER INFO */
+.cards p {
+  margin: 3px 10px;
+}
+
+.cards p:nth-child(1) {
+  color: #fff;
+  font-weight: 600;
+}
+
+.cards p:nth-child(3) {
+  background: #2a2a2a;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* DELETE BUTTON */
+
+.delete-btn {
+  width: fit-content;
+  border: 1px solid #555;
+  border-radius: 8px;
+}
+
+.cards button {
+  border: none;
+  padding: 6px 12px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+/* USER STATS */
+.user-stats {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  width: 280px;
+}
+
+.user-stats p {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}

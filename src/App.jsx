@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import './App.css'
 import UserManagement from './pages/UserManagement'
 import TaskManagement from './pages/TaskManagement'
 
 function App() {
   const [UserName, setUserName] = useState([]);
-  const TransferUserName = (names) => {
+  const TransferUserName = useCallback((names) => {
     setUserName(names)
-  }
+  }, []);
 
 
   return (

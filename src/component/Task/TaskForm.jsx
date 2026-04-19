@@ -24,7 +24,7 @@ const TaskForm = ({UserName,onAddTask}) => {
             <input className='tm-input' type="text" placeholder='Task title' value={TaskData.title} onChange={(e)=>setTaskData({...TaskData,title:e.target.value})} />
             <textarea className='tm-input' name="" placeholder='Description (optional)' id="" value={TaskData.description} onChange={(e)=>setTaskData({...TaskData,description:e.target.value})}></textarea>
             <select className='tm-select' name="" id="" value={TaskData.assignee} onChange={(e)=>setTaskData({...TaskData,assignee:e.target.value})}>
-                <option selected disabled value="">--Assign to User--</option>
+                <option defaultValue disabled value="">--Assign to User--</option>
                 {UserName.map((item,index)=>{
                     return (
                         <option key={index} value={item} >{item}</option>

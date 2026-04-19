@@ -25,7 +25,7 @@ const TaskManagement = ({UserName}) => {
   const total = TaskData.length
   const completed = TaskData.filter(task => task.checked).length
   const pending = TaskData.filter(task => !task.checked).length
-  const progress = Math.round((completed / total) * 100)
+  const progress = total === 0 ? 0 : Math.round((completed / total) * 100)
   return (
     <div className='TaskM-container'>  
         <h1>Task Management</h1>

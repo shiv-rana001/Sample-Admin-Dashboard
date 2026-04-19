@@ -36,10 +36,10 @@ const TaskManagement = ({UserName}) => {
             <TaskCards title="Pending" desc={pending} color="text-blue-600" hover="hover:bg-green-600"/>
             <TaskCards title="Progress" desc={progress} color="text-yellow-600" hover="hover:bg-purple-600"/>
         </div>
-        <div className="tm-tabs">
-            <div className={`tm-tab transition-all duration-300 ease-in-out hover:bg-purple-600 ${activeTab === 'all' ? 'active' : ''}`} onClick={()=>setActiveTab('all')}>All ({total})</div>
-            <div className={`tm-tab transition-all duration-300 ease-in-out hover:bg-green-600 ${activeTab === 'completed' ? 'active' : ''}`} onClick={()=>setActiveTab('completed')}>Completed ({completed})</div>
-            <div className={`tm-tab transition-all duration-300 ease-in-out hover:bg-blue-600 ${activeTab === 'pending' ? 'active' : ''}`} onClick={()=>setActiveTab('pending')}>Pending ({pending})</div>
+        <div className="tm-tabs" role="tablist">
+            <button className={`tm-tab transition-all duration-300 ease-in-out hover:bg-purple-600 ${activeTab === 'all' ? 'active' : ''}`} role="tab" aria-selected={activeTab === 'all'} onClick={()=>setActiveTab('all')}>All ({total})</button>
+            <button className={`tm-tab transition-all duration-300 ease-in-out hover:bg-green-600 ${activeTab === 'completed' ? 'active' : ''}`} role="tab" aria-selected={activeTab === 'completed'} onClick={()=>setActiveTab('completed')}>Completed ({completed})</button>
+            <button className={`tm-tab transition-all duration-300 ease-in-out hover:bg-blue-600 ${activeTab === 'pending' ? 'active' : ''}`} role="tab" aria-selected={activeTab === 'pending'} onClick={()=>setActiveTab('pending')}>Pending ({pending})</button>
         </div>
         <div className="tm-form-card flex gap-6">
           <div className='tm-form'>

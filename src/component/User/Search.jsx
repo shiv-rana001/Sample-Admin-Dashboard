@@ -4,7 +4,7 @@ const Search = ({ search, setSearch }) => {
     return (
         <>
             <div>
-                <input type="text" placeholder="Jo search krna h vo likhein" value={search} onChange={(e) => setSearch(e.target.value)} />
+                <input type="text" placeholder="Jo search krna h vo likhein" aria-label="Search users" value={search} onChange={(e) => setSearch(e.target.value)} />
             </div>
         </>
     )

@@ -17,9 +17,9 @@ const UserForm = ({onAddUser}) => {
     <>
     <form className='form-css' onSubmit={(e)=>handleSubmit(e)} >
         <h3>➕ New User Add Karo</h3>
-        <input type="text" placeholder='Name' value={FormData.name} onChange={(e)=>setFormData({...FormData,name:e.target.value})} />
-        <input type="text" placeholder='Email' value={FormData.email} onChange={(e)=>setFormData({...FormData,email:e.target.value})} />
-        <select name="" id="" value={FormData.role} onChange={(e)=>setFormData({...FormData,role:e.target.value})}>
+        <input type="text" placeholder='Name' aria-label="User Name" value={FormData.name} onChange={(e)=>setFormData({...FormData,name:e.target.value})} />
+        <input type="text" placeholder='Email' aria-label="User Email" value={FormData.email} onChange={(e)=>setFormData({...FormData,email:e.target.value})} />
+        <select name="" id="" aria-label="Select User Role" value={FormData.role} onChange={(e)=>setFormData({...FormData,role:e.target.value})}>
             <option value="" disabled>Select Role</option>
             <option value="Developer">Developer</option>
             <option value="Designer">Designer</option>

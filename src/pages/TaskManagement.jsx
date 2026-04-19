@@ -28,7 +28,7 @@ const TaskManagement = ({UserName}) => {
   const progress = total === 0 ? 0 : Math.round((completed / total) * 100)
   return (
     <div className='TaskM-container'>  
-        <h1>Task Management</h1>
+        <h2 className='tm-title text-3xl font-bold '>Task Management</h2>
         <p className='text-[#aaa]'>Total {total} tasks - {progress}% completed</p>
         <div className="tm-cards flex justify-evenly gap-5">
             <TaskCards title="Total" desc={total} color="text-purple-400"  hover="hover:bg-yellow-600"/>

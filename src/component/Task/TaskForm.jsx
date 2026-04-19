@@ -7,7 +7,8 @@ const TaskForm = ({UserName,onAddTask}) => {
         assignee:"",
         priority:"",
         dueDate:"",
-        checked:false
+        checked:false,
+        status:"Pending"
     })
 
     const handleSubmit = (e)=>{
